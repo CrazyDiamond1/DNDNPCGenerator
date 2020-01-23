@@ -1,0 +1,16 @@
+C:\Users\Noah Tanner\Desktop\Self-Projects\DnDNPCGenerator\DnDNPCGenerator\bin\Debug\DnDNPCGenerator.exe.config
+C:\Users\Noah Tanner\Desktop\Self-Projects\DnDNPCGenerator\DnDNPCGenerator\bin\Debug\DnDNPCGenerator.exe
+C:\Users\Noah Tanner\Desktop\Self-Projects\DnDNPCGenerator\DnDNPCGenerator\bin\Debug\DnDNPCGenerator.pdb
+C:\Users\Noah Tanner\Desktop\Self-Projects\DnDNPCGenerator\DnDNPCGenerator\obj\Debug\MainWindow.g.cs
+C:\Users\Noah Tanner\Desktop\Self-Projects\DnDNPCGenerator\DnDNPCGenerator\obj\Debug\UserControls\ListViewControl.g.cs
+C:\Users\Noah Tanner\Desktop\Self-Projects\DnDNPCGenerator\DnDNPCGenerator\obj\Debug\App.g.cs
+C:\Users\Noah Tanner\Desktop\Self-Projects\DnDNPCGenerator\DnDNPCGenerator\obj\Debug\DnDNPCGenerator_MarkupCompile.cache
+C:\Users\Noah Tanner\Desktop\Self-Projects\DnDNPCGenerator\DnDNPCGenerator\obj\Debug\DnDNPCGenerator_MarkupCompile.lref
+C:\Users\Noah Tanner\Desktop\Self-Projects\DnDNPCGenerator\DnDNPCGenerator\obj\Debug\MainWindow.baml
+C:\Users\Noah Tanner\Desktop\Self-Projects\DnDNPCGenerator\DnDNPCGenerator\obj\Debug\UserControls\ListViewControl.baml
+C:\Users\Noah Tanner\Desktop\Self-Projects\DnDNPCGenerator\DnDNPCGenerator\obj\Debug\DnDNPCGenerator.g.resources
+C:\Users\Noah Tanner\Desktop\Self-Projects\DnDNPCGenerator\DnDNPCGenerator\obj\Debug\DnDNPCGenerator.Properties.Resources.resources
+C:\Users\Noah Tanner\Desktop\Self-Projects\DnDNPCGenerator\DnDNPCGenerator\obj\Debug\DnDNPCGenerator.csproj.GenerateResource.cache
+C:\Users\Noah Tanner\Desktop\Self-Projects\DnDNPCGenerator\DnDNPCGenerator\obj\Debug\DnDNPCGenerator.csproj.CoreCompileInputs.cache
+C:\Users\Noah Tanner\Desktop\Self-Projects\DnDNPCGenerator\DnDNPCGenerator\obj\Debug\DnDNPCGenerator.exe
+C:\Users\Noah Tanner\Desktop\Self-Projects\DnDNPCGenerator\DnDNPCGenerator\obj\Debug\DnDNPCGenerator.pdb
