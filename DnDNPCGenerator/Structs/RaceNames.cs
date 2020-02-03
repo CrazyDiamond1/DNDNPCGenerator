@@ -17,12 +17,12 @@ namespace DnDNPCGenerator.Structs
         public static List<string> DragonbornFirstNameThirdFemaleSyllable = new List<string>() { "el", "sa", "s", "sh", "la", "se", "a", "is", "si", "il" };
 
         //Dwarf Name Syllables
-        public static List<string> DwarfFirstNameFirstMaleSyllable = new List<string>() { "" };
-        public static List<string> DwarfFirstNameSecondMaleSyllable = new List<string>() { "" };
-        public static List<string> DwarfFirstNameThirdMaleSyllable = new List<string>() { "" };
-        public static List<string> DwarfFirstNameFirstFemaleSyllable = new List<string>() { "" };
-        public static List<string> DwarfFirstNameSecondFemaleSyllable = new List<string>() { "" };
-        public static List<string> DwarfFirstNameThirdFemaleSyllable = new List<string>() { "" };
+        public static List<string> DwarfFirstNameFirstMaleSyllable = new List<string>() { "um", "eb", "th", "reg", "bar", "bhal", "gry", "bel", "hor", "Br" };
+        public static List<string> DwarfFirstNameSecondMaleSyllable = new List<string>() { "", "dr", "d", "ulg", "da", "mi", "thar", "igg", "gr", "gru", "ann" };
+        public static List<string> DwarfFirstNameThirdMaleSyllable = new List<string>() { "ak", "ur", "rum", "hr", "n", "m", "s", "on", "um", "ir" };
+        public static List<string> DwarfFirstNameFirstFemaleSyllable = new List<string>() { "ne", "gwa", "le", "je", "bo", "bry", "ny", "bri", "bre", "an" };
+        public static List<string> DwarfFirstNameSecondFemaleSyllable = new List<string>() { "", "sn", "nl", "sd", "nr", "ndr", "lled", "sth", "ller", "tv", "r" };
+        public static List<string> DwarfFirstNameThirdFemaleSyllable = new List<string>() { "is", "in", "ish", "es", "yn", "eth", "iel", "es", "ia", "as" };
 
         //Elf Name Syllables
         public static List<string> ElfFirstNameFirstMaleSyllable = new List<string>() { "gen", "tra", "lu", "wae", "sar", "fen", "dae", "wran", "cras", "mir" };
@@ -33,12 +33,12 @@ namespace DnDNPCGenerator.Structs
         public static List<string> ElfFirstNameThirdFemaleSyllable = new List<string>() { "la", "na", "na", "s", "elle", "re", "n", "sa", "sha", "lei" };
 
         //Gnome Name Syllables
-        public static List<string> GnomeFirstNameFirstMaleSyllable = new List<string>() { "" };
-        public static List<string> GnomeFirstNameSecondMaleSyllable = new List<string>() { "" };
-        public static List<string> GnomeFirstNameThirdMaleSyllable = new List<string>() { "" };
-        public static List<string> GnomeFirstNameFirstFemaleSyllable = new List<string>() { "" };
-        public static List<string> GnomeFirstNameSecondFemaleSyllable = new List<string>() { "" };
-        public static List<string> GnomeFirstNameThirdFemaleSyllable = new List<string>() { "" };
+        public static List<string> GnomeFirstNameFirstMaleSyllable = new List<string>() { "ron", "ga", "qua", "do", "pana", "cal", "lo", "to", "ipa", "xa"};
+        public static List<string> GnomeFirstNameSecondMaleSyllable = new List<string>() { "", "fa", "do", "se", "rle", "vy", "wo", "xi", "ku", "mi", "lsto" };
+        public static List<string> GnomeFirstNameThirdMaleSyllable = new List<string>() { "n", "s", "r", "t", "k", "l", "m", "t" };
+        public static List<string> GnomeFirstNameFirstFemaleSyllable = new List<string>() { "phi", "zan", "hel", "que", "Nyp", "hes", "in", "car", "cel", "spi" };
+        public static List<string> GnomeFirstNameSecondFemaleSyllable = new List<string>() { "", "iqar", "rha", "pi", "qar", "al", "ro", "ri", "my", "gy", "ki" };
+        public static List<string> GnomeFirstNameThirdFemaleSyllable = new List<string>() { "za", "yn", "na", "bys", "ne", "fyx", "li", "e", "fi", "bi" };
 
         //Half-Elf Name Syllables
         public static List<string> HalfElfFirstNameFirstMaleSyllable = new List<string>() { "" };
