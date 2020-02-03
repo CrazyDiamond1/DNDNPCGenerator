@@ -13,7 +13,7 @@ namespace DnDNPCGenerator.Utility
         public static Random NumberGenerator { get; } = new Random();
         public static StringBuilder SBuilder { get; } = new StringBuilder();
         public static int MaxRollExculsive { get; } = 7;
-        public static int MinRoll { get; } = 1;
+        public static int MinRoll { get; } = 0;
 
         public static int GenerateNumber(int minRoll, int maxRoll)
         {
@@ -41,7 +41,7 @@ namespace DnDNPCGenerator.Utility
         }
         public static Gender GenerateGender()
         {
-            return (Gender)NumberGenerator.Next(MinRoll, Enum.GetNames(typeof(Gender)).Length);
+            return (Gender)NumberGenerator.Next(0, Enum.GetNames(typeof(Gender)).Length);
         }
         public static string GenerateClass(int str, int dex, int con, int intell, int wis, int chr)
         {
