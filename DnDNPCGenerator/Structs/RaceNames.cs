@@ -41,43 +41,43 @@ namespace DnDNPCGenerator.Structs
         public static List<string> GnomeFirstNameThirdFemaleSyllable = new List<string>() { "za", "yn", "na", "bys", "ne", "fyx", "li", "e", "fi", "bi" };
 
         //Half-Elf Name Syllables
-        public static List<string> HalfElfFirstNameFirstMaleSyllable = new List<string>() { "" };
-        public static List<string> HalfElfFirstNameSecondMaleSyllable = new List<string>() { "" };
-        public static List<string> HalfElfFirstNameThirdMaleSyllable = new List<string>() { "" };
-        public static List<string> HalfElfFirstNameFirstFemaleSyllable = new List<string>() { "" };
-        public static List<string> HalfElfFirstNameSecondFemaleSyllable = new List<string>() { "" };
-        public static List<string> HalfElfFirstNameThirdFemaleSyllable = new List<string>() { "" };
+        public static List<string> HalfElfFirstNameFirstMaleSyllable = new List<string>() { "pan", "yor", "fal", "cra", "dav", "ian", "van", "zan", "syl", "ul" };
+        public static List<string> HalfElfFirstNameSecondMaleSyllable = new List<string>() { "", "sta", "cra", "re", "lum", "qar", "fae", "av", "de", "hom", "min" };
+        public static List<string> HalfElfFirstNameThirdMaleSyllable = new List<string>() { "er", "es", "ak", "in", "im", "lor", "or", "yr", "ar", "il" };
+        public static List<string> HalfElfFirstNameFirstFemaleSyllable = new List<string>() { "saf", "lor", "gif", "coc", "syl", "byn", "del", "oph", "xil", "win" };
+        public static List<string> HalfElfFirstNameSecondFemaleSyllable = new List<string>() { "", "no", "aze", "fae", "er", "dia", "dov", "ikil", "zir", "nal", "bell" };
+        public static List<string> HalfElfFirstNameThirdFemaleSyllable = new List<string>() { "a", "nya", "n", "ys", "ne", "e", "ia", "ore", "is" };
 
         //Halfling Name Syllables
-        public static List<string> HalflingFirstNameFirstMaleSyllable = new List<string>() { "" };
-        public static List<string> HalflingFirstNameSecondMaleSyllable = new List<string>() { "" };
-        public static List<string> HalflingFirstNameThirdMaleSyllable = new List<string>() { "" };
-        public static List<string> HalflingFirstNameFirstFemaleSyllable = new List<string>() { "" };
-        public static List<string> HalflingFirstNameSecondFemaleSyllable = new List<string>() { "" };
-        public static List<string> HalflingFirstNameThirdFemaleSyllable = new List<string>() { "" };
+        public static List<string> HalflingFirstNameFirstMaleSyllable = new List<string>() { "la", "san", "dan", "tey", "ori", "fal", "zen", "lar", "ira", "kas" };
+        public static List<string> HalflingFirstNameSecondMaleSyllable = new List<string>() { "", "wri", "tra", "ri", "nor" };
+        public static List<string> HalflingFirstNameThirdMaleSyllable = new List<string>() { "ry", "fer", "sire", "as", "dak", "der", "ck", "et", "umo", "gin" };
+        public static List<string> HalflingFirstNameFirstFemaleSyllable = new List<string>() { "mar", "bre", "cal", "dar", "sha", "fen", "una", "yo", "ri", "the" };
+        public static List<string> HalflingFirstNameSecondFemaleSyllable = new List<string>() { "", "tr", "za", "ew", "vi", "ri", "er" };
+        public static List<string> HalflingFirstNameThirdFemaleSyllable = new List<string>() { "sys", "kis", "ix", "na", "yn", "ra", "s", "a", "ni" };
 
         //Half-Orc Name Syllables
-        public static List<string> HalfOrcFirstNameFirstMaleSyllable = new List<string>() { "" };
-        public static List<string> HalfOrcFirstNameSecondMaleSyllable = new List<string>() { "" };
-        public static List<string> HalfOrcFirstNameThirdMaleSyllable = new List<string>() { "" };
-        public static List<string> HalfOrcFirstNameFirstFemaleSyllable = new List<string>() { "" };
-        public static List<string> HalfOrcFirstNameSecondFemaleSyllable = new List<string>() { "" };
-        public static List<string> HalfOrcFirstNameThirdFemaleSyllable = new List<string>() { "" };
+        public static List<string> HalfOrcFirstNameFirstMaleSyllable = new List<string>() { "tra", "tru", "sar", "mo", "ga", "zev", "gr", "kal", "gar", "kar" };
+        public static List<string> HalfOrcFirstNameSecondMaleSyllable = new List<string>() { "", "a", "o", "u", "e", "i" };
+        public static List<string> HalfOrcFirstNameThirdMaleSyllable = new List<string>() { "ruk", "zar", "bar", "kad", "mur", "lar", "rth", "zall", "ash", "gar" };
+        public static List<string> HalfOrcFirstNameFirstFemaleSyllable = new List<string>() { "sen", "el", "br", "ke", "sun", "kir", "sin", "sha", "gor", "mo" };
+        public static List<string> HalfOrcFirstNameSecondFemaleSyllable = new List<string>() { "", "a", "e", "i", "o", "u" };
+        public static List<string> HalfOrcFirstNameThirdFemaleSyllable = new List<string>() { "nir", "dur", "mur", "tid", "ume", "shi", "ook", "nur", "zi", "ur" };
 
         //Human Name Syllables
-        public static List<string> HumanFirstNameFirstMaleSyllable = new List<string>() { "" };
-        public static List<string> HumanFirstNameSecondMaleSyllable = new List<string>() { "" };
-        public static List<string> HumanFirstNameThirdMaleSyllable = new List<string>() { "" };
-        public static List<string> HumanFirstNameFirstFemaleSyllable = new List<string>() { "" };
-        public static List<string> HumanFirstNameSecondFemaleSyllable = new List<string>() { "" };
-        public static List<string> HumanFirstNameThirdFemaleSyllable = new List<string>() { "" };
+        public static List<string> HumanFirstNameFirstMaleSyllable = new List<string>() { "zu", "ha", "bre", "kor", "mor", "je", "shi", "rom", "fe", "ton" };
+        public static List<string> HumanFirstNameSecondMaleSyllable = new List<string>() { "", "kh", "me", "rdi", "go", "th", "eda", "ch" };
+        public static List<string> HumanFirstNameThirdMaleSyllable = new List<string>() { "an", "r", "rk", "m", "en", "ko", "om", "ulv", "i" };
+        public static List<string> HumanFirstNameFirstFemaleSyllable = new List<string>() { "mi", "op", "mal", "nat", "sha", "ja", "fia", "si", "saf", "vi", "ka", "far" };
+        public static List<string> HumanFirstNameSecondFemaleSyllable = new List<string>() { "", "um", "la", "fi", "tha", "ne", "gr" };
+        public static List<string> HumanFirstNameThirdFemaleSyllable = new List<string>() { "oh", "in", "la", "nah", "lo", "vo", "ri", "eth", "ve", "as", "ao", "ra" };
 
         //Tiefling Name Syllables
-        public static List<string> TieflingFirstNameFirstMaleSyllable = new List<string>() { "" };
-        public static List<string> TieflingFirstNameSecondMaleSyllable = new List<string>() { "" };
-        public static List<string> TieflingFirstNameThirdMaleSyllable = new List<string>() { "" };
-        public static List<string> TieflingFirstNameFirstFemaleSyllable = new List<string>() { "" };
-        public static List<string> TieflingFirstNameSecondFemaleSyllable = new List<string>() { "" };
-        public static List<string> TieflingFirstNameThirdFemaleSyllable = new List<string>() { "" };
+        public static List<string> TieflingFirstNameFirstMaleSyllable = new List<string>() { "ark", "ara", "kar", "bar", "fre", "san", "kat", "sha", "dam", "zor", "con" };
+        public static List<string> TieflingFirstNameSecondMaleSyllable = new List<string>() { "", "ra", "ak", "ly", "ya", "xu", "no"};
+        public static List<string> TieflingFirstNameThirdMaleSyllable = new List<string>() { "oon", "is", "ire", "us", "ry", "age", "less", "us", "os", "ity", "or" };
+        public static List<string> TieflingFirstNameFirstFemaleSyllable = new List<string>() { "zel", "in", "ea", "ara", "dim", "dax", "agn", "mis", "bel", "ori" };
+        public static List<string> TieflingFirstNameSecondFemaleSyllable = new List<string>() { "", "l", "k", "s", "r", "n", "u" };
+        public static List<string> TieflingFirstNameThirdFemaleSyllable = new List<string>() { "ia", "ine", "ari", "phis", "eis", "ori", "issa", "ar", "ry", "al" };
     }
 }
