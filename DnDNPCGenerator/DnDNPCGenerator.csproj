@@ -57,6 +57,9 @@
     </ApplicationDefinition>
     <Compile Include="Enums\Alignment.cs" />
     <Compile Include="Enums\Gender.cs" />
+    <Compile Include="Pages\ViewCharacters.xaml.cs">
+      <DependentUpon>ViewCharacters.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Structs\DNDClass.cs" />
     <Compile Include="Enums\Race.cs" />
     <Compile Include="Structs\RaceNames.cs" />
@@ -76,6 +79,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\ViewCharacters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\ListViewControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
