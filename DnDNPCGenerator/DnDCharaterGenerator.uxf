@@ -58,34 +58,27 @@ Character
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>460</x>
-      <y>30</y>
-      <w>110</w>
+      <x>620</x>
+      <y>40</y>
+      <w>170</w>
       <h>260</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+    <panel_attributes>&lt;&lt;struct&gt;&gt;
 DNDClass
 --
-BARBARIAN
-BARD
-CLERIC
-DRUID
-FIGHTER
-MONK
-PALADIN
-RANGER
-ROUGE
-SORCERER
-WARLOCK
-WIZARD
-ARTIFICER</panel_attributes>
++Strength: List&lt;string&gt;
++Dexterity: List&lt;string&gt;
++Constitution: List&lt;string&gt;
++Intelligence: List&lt;string&gt;
++Wisdom: List&lt;string&gt;
++Charisma: List&lt;string&gt;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>580</x>
-      <y>30</y>
+      <x>810</x>
+      <y>40</y>
       <w>170</w>
       <h>550</h>
     </coordinates>
@@ -133,9 +126,9 @@ WARFORGED</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>450</x>
-      <y>0</y>
-      <w>570</w>
+      <x>800</x>
+      <y>10</y>
+      <w>350</w>
       <h>600</h>
     </coordinates>
     <panel_attributes>Enums
@@ -147,8 +140,8 @@ layer=-1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>760</x>
-      <y>30</y>
+      <x>990</x>
+      <y>40</y>
       <w>150</w>
       <h>200</h>
     </coordinates>

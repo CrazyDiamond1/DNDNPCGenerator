@@ -56,8 +56,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Enums\Alignment.cs" />
+    <Compile Include="Enums\Gender.cs" />
     <Compile Include="Structs\DNDClass.cs" />
     <Compile Include="Enums\Race.cs" />
+    <Compile Include="Structs\RaceNames.cs" />
     <Compile Include="UserControls\ListViewControl.xaml.cs">
       <DependentUpon>ListViewControl.xaml</DependentUpon>
     </Compile>
