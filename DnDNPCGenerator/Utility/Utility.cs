@@ -19,20 +19,26 @@ namespace DnDNPCGenerator.Utility
         {
             return NumberGenerator.Next(minRoll, maxRoll);
         }
-        public static int GenerateStatistic()
+        public static int GenerateStatistic(int stat = 0)
         {
-            int stat = 0;
-            int lowest = 6;
-            for (int i = 0; i < 4; i++)
+            if(stat == 0)
             {
-                int currentRoll = NumberGenerator.Next(MinRoll, MaxRollExculsive);
-                stat += currentRoll;
-                if (currentRoll < lowest)
+                int lowest = 6;
+                for (int i = 0; i < 4; i++)
                 {
-                    lowest = currentRoll;
+                    int currentRoll = NumberGenerator.Next(MinRoll, MaxRollExculsive);
+                    stat += currentRoll;
+                    if (currentRoll < lowest)
+                    {
+                        lowest = currentRoll;
+                    }
                 }
+                stat = stat - lowest;
             }
-            stat = stat - lowest;
+            else if(stat > 20)
+            {
+                stat = 20;
+            }
             return stat;
         }
         public static Race GenerateRace()
