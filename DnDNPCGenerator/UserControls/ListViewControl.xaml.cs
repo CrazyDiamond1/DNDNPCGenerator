@@ -31,6 +31,10 @@ namespace DnDNPCGenerator.UserControls
         {
             InitializeComponent();
             SetCharacter = characterInput;
+            NameLabel.Content = SetCharacter.Name;
+            RaceLabel.Content = Utility.Utility.EnumToString(SetCharacter.Race);
+            ClassLabel.Content = Utility.Utility.EnumToString(SetCharacter.DnDClass);
+            AlignmentLabel.Content = Utility.Utility.EnumToString(SetCharacter.Alignment);
             this.DataContext = SetCharacter;
         }
     }

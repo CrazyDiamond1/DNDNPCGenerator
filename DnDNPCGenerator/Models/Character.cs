@@ -1,4 +1,5 @@
 ﻿using DnDNPCGenerator.Enums;
+using DnDNPCGenerator.Utility;
 
 namespace DnDNPCGenerator.Models
 {
@@ -13,8 +14,9 @@ namespace DnDNPCGenerator.Models
         public int Charisma { get; private set; }
         public Race Race { get; private set; }
         public Gender Gender { get; private set;  }
-        public string DnDClass { get; private set; }
+        public DNDClass DnDClass { get; private set; }
         public Alignment Alignment { get; private set; }
+        public byte[] ImageBytes { get; private set; }
         public Character()
         {
             Strength = Utility.Utility.GenerateStatistic();
@@ -28,7 +30,8 @@ namespace DnDNPCGenerator.Models
             Name = Utility.Utility.GenerateName(Race, Gender);
             DnDClass = Utility.Utility.GenerateClass(Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma);
             Alignment = Utility.Utility.GenerateAlignment();
-
+            //string alignmenthalf = Alignment.ToString().Split('_')[1];
+            //ImageBytes = Utility.Utility.GetCharacterImage(Gender, Race, DnDClass, alignmenthalf);
         }
     }
 }

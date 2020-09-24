@@ -5,14 +5,14 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DnDNPCGenerator.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="1000"
+      d:DesignHeight="600" d:DesignWidth="1150"
       ShowsNavigationUI="False"
       Title="View Characters">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="30*"/>
-            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="7*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
@@ -23,6 +23,7 @@
                Content="Characters"
                Height="Auto"
                VerticalAlignment="Stretch"
+               VerticalContentAlignment="Center"
                FontSize="20"
                HorizontalAlignment="Center"/>
         <ListBox x:Name="CharacterBox"
@@ -41,14 +42,34 @@
                Content="Character Stats"
                Height="Auto"
                VerticalAlignment="Stretch"
+               VerticalContentAlignment="Center"
                FontSize="20"
                HorizontalAlignment="Center"/>
-        <DockPanel x:Name="CharacterInfoPanel"  
+        <Button x:Name="GenerateOptions"
+                Content="Generation Options"
+                FontSize="15"
+                Grid.Column="1"
+                HorizontalAlignment="Right"
+                Height="30"
+                Margin="10"
+                Click="GenerateOptions_Click"/>
+        <Grid x:Name="CharacterInfoGrid"  
                    Grid.Column="1"
                    Grid.Row="1"
                    HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
             <Grid x:Name="SurfaceTraitsGrid"
-                  DockPanel.Dock="Top"
+                  Grid.ColumnSpan="3"
+                  Grid.Row="0"
                   HorizontalAlignment="Stretch"
                   Background="WhiteSmoke">
                 <Grid.RowDefinitions>
@@ -137,7 +158,9 @@
                        Grid.Row="1"/>
             </Grid>
             <Grid x:Name="StatGrid"
-                  DockPanel.Dock="Left"
+                  Grid.Column="0"
+                  Grid.Row="1"
+                  Grid.RowSpan="2"
                   Margin="10"
                   Background="WhiteSmoke">
                 <Grid.ColumnDefinitions>
@@ -243,7 +266,8 @@
             </Grid>
             <Grid x:Name="PersonalityGrid"
                   Margin="10"
-                  DockPanel.Dock="Right"
+                  Grid.Column="2"
+                  Grid.Row="1"
                   Background="WhiteSmoke">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="8*"/>
@@ -292,13 +316,24 @@
                        Grid.Row="7"
                        Width="300"/>
             </Grid>
+            <Image x:Name="CharacterImage"
+                   />
             <Button x:Name="GenerateButton"
                     Height="35"
                     Width="120"
                     Content="Generate!"
                     FontSize="20"
-                    DockPanel.Dock="Bottom"
+                    Grid.Column="1"
+                    Grid.Row="2"
                     Click="GenerateButton_Click"/>
-        </DockPanel>
+            <Button x:Name="EditButton"
+                    Height="35"
+                    Width="120"
+                    Content="Edit!"
+                    FontSize="20"
+                    Grid.Column="2"
+                    Grid.Row="2"
+                    Click="EditButton_Click"/>
+        </Grid>
     </Grid>
 </Page>

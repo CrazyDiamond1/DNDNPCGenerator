@@ -1,4 +1,5 @@
-﻿using DnDNPCGenerator.Models;
+﻿using DnDNPCGenerator.Enums;
+using DnDNPCGenerator.Models;
 using DnDNPCGenerator.UserControls;
 using System;
 using System.Collections.Generic;
@@ -32,12 +33,29 @@ namespace DnDNPCGenerator.Pages
             Characters = new List<Character>();
         }
 
+        public ViewCharacters(List<Character> characters, Character selected)
+        {
+            InitializeComponent();
+            SelectedCharacter = selected;
+            DisplayCharacterStats();
+            Characters = characters;
+            LoadCharacterListBox();
+        }
+
         private void GenerateButton_Click(object sender, RoutedEventArgs e)
         {
             SelectedCharacter = new Character();
             DisplayCharacterStats();
             Characters.Add(SelectedCharacter);
             AddCharacterItemBoxToCharacterListBox(SelectedCharacter);
+        }
+
+        private void LoadCharacterListBox()
+        {
+            foreach(Character c in Characters)
+            {
+                AddCharacterItemBoxToCharacterListBox(c);
+            }
         }
 
         private void AddCharacterItemBoxToCharacterListBox(Character c)
@@ -56,16 +74,26 @@ namespace DnDNPCGenerator.Pages
         private void DisplayCharacterStats()
         {
             CharName.Content = SelectedCharacter.Name;
-            CharRace.Content = SelectedCharacter.Race;
-            CharGender.Content = SelectedCharacter.Gender;
-            CharAlignment.Content = SelectedCharacter.Alignment;
-            CharClass.Content = SelectedCharacter.DnDClass;
+            CharRace.Content = Utility.Utility.EnumToString(SelectedCharacter.Race);
+            CharGender.Content = Utility.Utility.EnumToString(SelectedCharacter.Gender);
+            CharAlignment.Content = Utility.Utility.EnumToString(SelectedCharacter.Alignment);
+            CharClass.Content = Utility.Utility.EnumToString(SelectedCharacter.DnDClass);
             CharStr.Content = SelectedCharacter.Strength;
             CharDex.Content = SelectedCharacter.Dexterity;
             CharCon.Content = SelectedCharacter.Constitution;
             CharInt.Content = SelectedCharacter.Intelligence;
             CharWis.Content = SelectedCharacter.Wisdom;
             CharChr.Content = SelectedCharacter.Charisma;
+        }
+
+        private void GenerateOptions_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            EditCharacter editCharPage = new EditCharacter(Characters, SelectedCharacter);
+            NavigationService.Navigate(editCharPage);
         }
     }
 }

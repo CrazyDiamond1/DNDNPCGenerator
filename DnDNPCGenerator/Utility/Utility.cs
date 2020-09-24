@@ -5,6 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DnDNPCGenerator.Structs;
+using System.Net;
+using System.IO;
+using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace DnDNPCGenerator.Utility
 {
@@ -49,38 +53,95 @@ namespace DnDNPCGenerator.Utility
         {
             return (Gender)NumberGenerator.Next(0, Enum.GetNames(typeof(Gender)).Length);
         }
-        public static string GenerateClass(int str, int dex, int con, int intell, int wis, int chr)
+
+        //public static byte[] GetCharacterImage(Gender gender, Race race, string DNDClassAssigner, string alignment)
+        //{
+        //    string charDescription = gender.ToString() + " " + race.ToString() + " " + DNDClassAssigner + " " + alignment;
+        //    string url = GetUrl(GetHtmlCode(charDescription));
+
+        //    var request = (HttpWebRequest)WebRequest.Create(url);
+        //    var response = (HttpWebResponse)request.GetResponse();
+
+        //    using (Stream dataStream = response.GetResponseStream())
+        //    {
+        //        if (dataStream == null)
+        //            return null;
+        //        using (var sr = new BinaryReader(dataStream))
+        //        {
+        //            byte[] bytes = sr.ReadBytes(100000);
+
+        //            return bytes;
+        //        }
+        //    }
+        //}
+
+        //private static string GetHtmlCode(string characterDescription)
+        //{
+        //    string url = "https://www.google.com/search?q=" + characterDescription + "&tbm=isch";
+        //    string data = "";
+
+        //    var request = (HttpWebRequest)WebRequest.Create(url);
+        //    request.Accept = "text/html, application/xhtml+xml, */*";
+        //    request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko";
+
+        //    var response = (HttpWebResponse)request.GetResponse();
+
+        //    using (Stream dataStream = response.GetResponseStream())
+        //    {
+        //        if (dataStream == null)
+        //            return "";
+        //        using (var sr = new StreamReader(dataStream))
+        //        {
+        //            data = sr.ReadToEnd();
+        //        }
+        //    }
+        //    return data;
+        //}
+
+        //private static string GetUrl(string html)
+        //{
+        //    var urls = "";
+
+        //    string search = @",""ou"":""(.*?)"",";
+        //    MatchCollection matches = Regex.Matches(html, search);
+
+        //    urls = matches[0].Groups[1].Value;
+        //    return urls;
+        //}
+
+
+        public static DNDClass GenerateClass(int str, int dex, int con, int intell, int wis, int chr)
         {
             int[] stats = { str, dex, con, intell, wis, chr };
             int maxValue = stats.Max();
             int maxValueIndex = stats.ToList().IndexOf(maxValue);
 
-            string selected = DNDClass.strength[0];
+            DNDClass selected = DNDClassAssigner.strength[0];
 
             //Strength classes
             if (maxValueIndex == 0)
             {
-                selected = DNDClass.strength[GenerateNumber(0, DNDClass.strength.Count())];
+                selected = DNDClassAssigner.strength[GenerateNumber(0, DNDClassAssigner.strength.Count())];
             }
             else if (maxValueIndex == 1)
             {
-                selected = DNDClass.dexterity[GenerateNumber(0, DNDClass.dexterity.Count())];
+                selected = DNDClassAssigner.dexterity[GenerateNumber(0, DNDClassAssigner.dexterity.Count())];
             }
             else if (maxValueIndex == 2)
             {
-                selected = DNDClass.constitution[GenerateNumber(0, DNDClass.constitution.Count())];
+                selected = DNDClassAssigner.constitution[GenerateNumber(0, DNDClassAssigner.constitution.Count())];
             }
             else if (maxValueIndex == 3)
             {
-                selected = DNDClass.intelligence[GenerateNumber(0, DNDClass.intelligence.Count())];
+                selected = DNDClassAssigner.intelligence[GenerateNumber(0, DNDClassAssigner.intelligence.Count())];
             }
             else if (maxValueIndex == 4)
             {
-                selected = DNDClass.wisdom[GenerateNumber(0, DNDClass.wisdom.Count())];
+                selected = DNDClassAssigner.wisdom[GenerateNumber(0, DNDClassAssigner.wisdom.Count())];
             }
             else
             {
-                selected = DNDClass.charisma[GenerateNumber(0, DNDClass.charisma.Count())];
+                selected = DNDClassAssigner.charisma[GenerateNumber(0, DNDClassAssigner.charisma.Count())];
             }
 
 
@@ -212,6 +273,15 @@ namespace DnDNPCGenerator.Utility
             name = name != "" ? name.First().ToString().ToUpper() + name.Substring(1) : "";
             SBuilder.Clear();
             return name == "" ? "Spoink" : name;
+        }
+        public static string EnumToString<T>(T value)
+        {
+            string valueString = value.ToString();
+            TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
+            valueString = valueString.Replace('_', ' ');
+            valueString = valueString.ToLower();
+            valueString = myTI.ToTitleCase(valueString);
+            return valueString;
         }
     }
 }

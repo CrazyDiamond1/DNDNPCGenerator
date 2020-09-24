@@ -9,7 +9,7 @@
                   Source="Pages/ViewCharacters.xaml"
                   Background="#ffcccc"
                   Title="MainWindow" 
-                  Height="500" 
-                  Width="1000"/>
+                  Height="600" 
+                  Width="1150"/>
 
 
