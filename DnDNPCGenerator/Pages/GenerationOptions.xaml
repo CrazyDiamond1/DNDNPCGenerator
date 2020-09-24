@@ -1,0 +1,39 @@
+﻿<Page x:Class="DnDNPCGenerator.Pages.GenerationOptions"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DnDNPCGenerator.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1150"
+      Title="GenerationOptions">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="CharacterListboxTitle"
+               Grid.Row="0"
+               Content="Characters"
+               Height="Auto"
+               VerticalAlignment="Stretch"
+               VerticalContentAlignment="Center"
+               FontSize="20"
+               HorizontalAlignment="Center"/>
+        <ListBox x:Name="CharacterBox"
+                 Grid.Column="0"
+                 Grid.Row="1"
+                 Height="Auto"
+                 VerticalAlignment="Stretch"
+                 Background="AliceBlue"
+                 FontSize="10"
+                 HorizontalContentAlignment="Stretch"
+                 SelectionChanged="CharacterBox_SelectionChanged"
+                 Margin="10"/>
+    </Grid>
+</Page>
