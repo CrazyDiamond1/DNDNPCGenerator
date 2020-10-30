@@ -5,18 +5,18 @@ namespace DnDNPCGenerator.Models
 {
     public class Character
     {
-        public string Name { get; private set; }
-        public int Strength { get; private set; }
-        public int Dexterity { get; private set; }
-        public int Constitution { get; private set; }
-        public int Intelligence { get; private set; }
-        public int Wisdom { get; private set; }
-        public int Charisma { get; private set; }
-        public Race Race { get; private set; }
-        public Gender Gender { get; private set;  }
-        public DNDClass DnDClass { get; private set; }
-        public Alignment Alignment { get; private set; }
-        public byte[] ImageBytes { get; private set; }
+        public string Name { get; set; }
+        public int Strength { get; set; }
+        public int Dexterity { get; set; }
+        public int Constitution { get; set; }
+        public int Intelligence { get; set; }
+        public int Wisdom { get; set; }
+        public int Charisma { get; set; }
+        public Race Race { get; set; }
+        public Gender Gender { get; set;  }
+        public DNDClass DnDClass { get; set; }
+        public Alignment Alignment { get; set; }
+        public byte[] ImageBytes { get; set; }
         public Character()
         {
             Strength = Utility.Utility.GenerateStatistic();

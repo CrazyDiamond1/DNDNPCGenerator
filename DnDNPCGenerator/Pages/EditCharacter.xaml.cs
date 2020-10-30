@@ -83,8 +83,22 @@ namespace DnDNPCGenerator.Pages
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void ViewButton_Click(object sender, RoutedEventArgs e)
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            SelectedCharacter.Name = CharName.Text;
+            int tempInt = 0;
+            Int32.TryParse(CharStr.Text, out tempInt);
+            SelectedCharacter.Strength = tempInt < 0 ? 0 : tempInt;
+            Int32.TryParse(CharInt.Text, out tempInt);
+            SelectedCharacter.Intelligence = tempInt < 0 ? 0 : tempInt;
+            Int32.TryParse(CharDex.Text, out tempInt);
+            SelectedCharacter.Dexterity = tempInt < 0 ? 0 : tempInt;
+            Int32.TryParse(CharWis.Text, out tempInt);
+            SelectedCharacter.Wisdom = tempInt < 0 ? 0 : tempInt;
+            Int32.TryParse(CharCon.Text, out tempInt);
+            SelectedCharacter.Constitution = tempInt < 0 ? 0 : tempInt;
+            Int32.TryParse(CharChr.Text, out tempInt);
+            SelectedCharacter.Charisma = tempInt < 0 ? 0 : tempInt;
             ViewCharacters viewCharPage = new ViewCharacters(Characters, SelectedCharacter);
             NavigationService.Navigate(viewCharPage);
         }

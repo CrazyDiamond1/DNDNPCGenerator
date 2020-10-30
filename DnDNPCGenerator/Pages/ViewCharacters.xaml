@@ -9,7 +9,7 @@
       ShowsNavigationUI="False"
       Title="View Characters">
 
-    <Grid>
+    <Grid Background="#5E6197">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="7*"/>
@@ -25,13 +25,14 @@
                VerticalAlignment="Stretch"
                VerticalContentAlignment="Center"
                FontSize="20"
+               Foreground="#E9EBF8"
                HorizontalAlignment="Center"/>
         <ListBox x:Name="CharacterBox"
                  Grid.Column="0"
                  Grid.Row="1"
                  Height="Auto"
                  VerticalAlignment="Stretch"
-                 Background="AliceBlue"
+                 Background="#E9EBF8"
                  FontSize="10"
                  HorizontalContentAlignment="Stretch"
                  SelectionChanged="CharacterBox_SelectionChanged"
@@ -67,21 +68,23 @@
                 <RowDefinition Height="8*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            <Grid x:Name="SurfaceTraitsGrid"
-                  Grid.ColumnSpan="3"
-                  Grid.Row="0"
-                  HorizontalAlignment="Stretch"
-                  Background="WhiteSmoke">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50*"/>
-                    <RowDefinition Height="50*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="33*"/>
-                    <ColumnDefinition Width="33*"/>
-                    <ColumnDefinition Width="33*"/>
-                </Grid.ColumnDefinitions>
-                <Label x:Name="LabelName"
+            <Border BorderThickness="1" 
+                    CornerRadius="8"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="0"
+                    HorizontalAlignment="Stretch"
+                    Background="#E9EBF8">
+                <Grid x:Name="SurfaceTraitsGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*"/>
+                        <RowDefinition Height="50*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="33*"/>
+                        <ColumnDefinition Width="33*"/>
+                        <ColumnDefinition Width="33*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="LabelName"
                        Content="Name: "
                        Height="30"
                        Width="80"
@@ -89,14 +92,14 @@
                        HorizontalAlignment="Left"
                        Grid.Column="0"
                        Grid.Row="0"/>
-                <Label x:Name="CharName"
+                    <Label x:Name="CharName"
                        Height="30"
                        Width="150"
                        HorizontalContentAlignment="Left"
                        HorizontalAlignment="Right"
                        Grid.Column="0"
                        Grid.Row="0"/>
-                <Label x:Name="LabelRace"
+                    <Label x:Name="LabelRace"
                        Content="Race: "
                        Height="30"
                        Width="80"
@@ -104,14 +107,14 @@
                        HorizontalAlignment="Left"
                        Grid.Column="1"
                        Grid.Row="0"/>
-                <Label x:Name="CharRace"
+                    <Label x:Name="CharRace"
                        Height="30"
                        Width="150"
                        HorizontalContentAlignment="Left"
                        HorizontalAlignment="Right"
                        Grid.Column="1"
                        Grid.Row="0"/>
-                <Label x:Name="LabelClass"
+                    <Label x:Name="LabelClass"
                        Content="Class: "
                        Height="30"
                        Width="80"
@@ -119,14 +122,14 @@
                        HorizontalAlignment="Left"
                        Grid.Column="2"
                        Grid.Row="0"/>
-                <Label x:Name="CharClass"
+                    <Label x:Name="CharClass"
                        Height="30"
                        Width="150"
                        HorizontalContentAlignment="Left"
                        HorizontalAlignment="Right"
                        Grid.Column="2"
                        Grid.Row="0"/>
-                <Label x:Name="LabelGender"
+                    <Label x:Name="LabelGender"
                        Content="Gender: "
                        Height="30"
                        Width="80"
@@ -134,14 +137,14 @@
                        HorizontalAlignment="Left"
                        Grid.Column="0"
                        Grid.Row="1"/>
-                <Label x:Name="CharGender"
+                    <Label x:Name="CharGender"
                        Height="30"
                        Width="150"
                        HorizontalContentAlignment="Left"
                        HorizontalAlignment="Right"
                        Grid.Column="0"
                        Grid.Row="1"/>
-                <Label x:Name="LabelAlignment"
+                    <Label x:Name="LabelAlignment"
                        Content="Alignment: "
                        Height="30"
                        Width="80"
@@ -149,37 +152,39 @@
                        HorizontalAlignment="Left"
                        Grid.Column="2"
                        Grid.Row="3"/>
-                <Label x:Name="CharAlignment"
+                    <Label x:Name="CharAlignment"
                        Height="30"
                        Width="150"
                        HorizontalContentAlignment="Left"
                        HorizontalAlignment="Right"
                        Grid.Column="2"
                        Grid.Row="1"/>
-            </Grid>
-            <Grid x:Name="StatGrid"
-                  Grid.Column="0"
-                  Grid.Row="1"
-                  Grid.RowSpan="2"
-                  Margin="10"
-                  Background="WhiteSmoke">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="50*"/>
-                    <ColumnDefinition Width="50*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="33*"/>
-                    <RowDefinition Height="33*"/>
-                    <RowDefinition Height="33*"/>
-                </Grid.RowDefinitions>
-                <Label x:Name="CharStr"
+                </Grid>
+            </Border>
+            <Border BorderThickness="1" CornerRadius="8"
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Grid.RowSpan="2"
+                    Background="#E9EBF8"
+                    Margin="10">
+                <Grid x:Name="StatGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*"/>
+                        <ColumnDefinition Width="50*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="33*"/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="CharStr"
                        Height="30"
                        Width="80"
                        VerticalAlignment="Center"
                        HorizontalContentAlignment="Center"
                        Grid.Column="0"
                        Grid.Row="0"/>
-                <Label x:Name="LabelStr"
+                    <Label x:Name="LabelStr"
                        Content="Strength"
                        Height="30"
                        Width="80"
@@ -187,14 +192,14 @@
                        HorizontalContentAlignment="Center"
                        Grid.Column="0"
                        Grid.Row="0"/>
-                <Label x:Name="CharDex"
+                    <Label x:Name="CharDex"
                        Height="30"
                        Width="80"
                        VerticalAlignment="Center"
                        HorizontalContentAlignment="Center"
                        Grid.Column="1"
                        Grid.Row="0"/>
-                <Label x:Name="LabelDex"
+                    <Label x:Name="LabelDex"
                        Content="Dexterity"
                        Height="30"
                        Width="80"
@@ -202,14 +207,14 @@
                        HorizontalContentAlignment="Center"
                        Grid.Column="1"
                        Grid.Row="0"/>
-                <Label x:Name="CharCon"
+                    <Label x:Name="CharCon"
                        Height="30"
                        Width="80"
                        VerticalAlignment="Center"
                        HorizontalContentAlignment="Center"
                        Grid.Column="0"
                        Grid.Row="1"/>
-                <Label x:Name="LabelCon"
+                    <Label x:Name="LabelCon"
                        Content="Constitution"
                        Height="30"
                        Width="80"
@@ -217,14 +222,14 @@
                        HorizontalContentAlignment="Center"
                        Grid.Column="0"
                        Grid.Row="1"/>
-                <Label x:Name="CharInt"
+                    <Label x:Name="CharInt"
                        Height="30"
                        Width="80"
                        VerticalAlignment="Center"
                        HorizontalContentAlignment="Center"
                        Grid.Column="1"
                        Grid.Row="1"/>
-                <Label x:Name="LabelInt"
+                    <Label x:Name="LabelInt"
                        Content="Intelligence"
                        Height="30"
                        Width="80"
@@ -232,14 +237,14 @@
                        HorizontalContentAlignment="Center"
                        Grid.Column="1"
                        Grid.Row="1"/>
-                <Label x:Name="CharWis"
+                    <Label x:Name="CharWis"
                        Height="30"
                        Width="80"
                        VerticalAlignment="Center"
                        HorizontalContentAlignment="Center"
                        Grid.Column="0"
                        Grid.Row="2"/>
-                <Label x:Name="LabelWis"
+                    <Label x:Name="LabelWis"
                        Content="Wisdom"
                        Height="30"
                        Width="80"
@@ -247,14 +252,14 @@
                        HorizontalContentAlignment="Center"
                        Grid.Column="0"
                        Grid.Row="2"/>
-                <Label x:Name="CharChr"
+                    <Label x:Name="CharChr"
                        Height="30"
                        Width="80"
                        VerticalAlignment="Center"
                        HorizontalContentAlignment="Center"
                        Grid.Column="1"
                        Grid.Row="2"/>
-                <Label x:Name="LabelChr"
+                    <Label x:Name="LabelChr"
                        Content="Charisma"
                        Height="30"
                        Width="80"
@@ -263,59 +268,62 @@
                        Grid.Column="1"
                        Grid.Row="2"/>
 
-            </Grid>
-            <Grid x:Name="PersonalityGrid"
-                  Margin="10"
-                  Grid.Column="2"
-                  Grid.Row="1"
-                  Background="WhiteSmoke">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="8*"/>
-                    <RowDefinition Height="17*"/>
-                    <RowDefinition Height="8*"/>
-                    <RowDefinition Height="17*"/>
-                    <RowDefinition Height="8*"/>
-                    <RowDefinition Height="17*"/>
-                    <RowDefinition Height="8*"/>
-                    <RowDefinition Height="17*"/>
-                </Grid.RowDefinitions>
-                <Label x:Name="PersonalityLabel"
+                </Grid>
+            </Border>
+            <Border BorderThickness="1" CornerRadius="8"
+                    Margin="10"
+                    Grid.Column="2"
+                    Grid.Row="1"
+                    Background="#E9EBF8">
+                <Grid x:Name="PersonalityGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="8*"/>
+                        <RowDefinition Height="17*"/>
+                        <RowDefinition Height="8*"/>
+                        <RowDefinition Height="17*"/>
+                        <RowDefinition Height="8*"/>
+                        <RowDefinition Height="17*"/>
+                        <RowDefinition Height="8*"/>
+                        <RowDefinition Height="17*"/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="PersonalityLabel"
                        Grid.Row="0"
                        Content="Personality Traits"
                        FontSize="15"
                        HorizontalContentAlignment="Center"
                        Width="250"/>
-                <Label x:Name="PersonalityContent"
+                    <Label x:Name="PersonalityContent"
                        Grid.Row="1"
                        Width="300"/>
-                <Label x:Name="IdealsLabel"
+                    <Label x:Name="IdealsLabel"
                        Grid.Row="2"
                        Content="Ideals"
                        FontSize="15"
                        HorizontalContentAlignment="Center"
                        Width="250"/>
-                <Label x:Name="IdealsContent"
+                    <Label x:Name="IdealsContent"
                        Grid.Row="3"
                        Width="300"/>
-                <Label x:Name="BondsLabel"
+                    <Label x:Name="BondsLabel"
                        Grid.Row="4"
                        Content="Bonds"
                        FontSize="15"
                        HorizontalContentAlignment="Center"
                        Width="250"/>
-                <Label x:Name="BondsContent"
+                    <Label x:Name="BondsContent"
                        Grid.Row="5"
                        Width="300"/>
-                <Label x:Name="FlawsLabel"
+                    <Label x:Name="FlawsLabel"
                        Grid.Row="6"
                        Content="Flaws"
                        FontSize="15"
                        HorizontalContentAlignment="Center"
                        Width="250"/>
-                <Label x:Name="FlawsContent"
+                    <Label x:Name="FlawsContent"
                        Grid.Row="7"
                        Width="300"/>
-            </Grid>
+                </Grid>
+            </Border>
             <Image x:Name="CharacterImage"
                    />
             <Button x:Name="GenerateButton"
@@ -325,8 +333,10 @@
                     FontSize="20"
                     Grid.Column="1"
                     Grid.Row="2"
+                    Background="#FB2347"
                     Click="GenerateButton_Click"/>
             <Button x:Name="EditButton"
+                    Visibility="Hidden"
                     Height="35"
                     Width="120"
                     Content="Edit!"

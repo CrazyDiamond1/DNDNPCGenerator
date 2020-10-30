@@ -48,6 +48,7 @@ namespace DnDNPCGenerator.Pages
             DisplayCharacterStats();
             Characters.Add(SelectedCharacter);
             AddCharacterItemBoxToCharacterListBox(SelectedCharacter);
+            EditButton.Visibility = Visibility.Visible;
         }
 
         private void LoadCharacterListBox()
