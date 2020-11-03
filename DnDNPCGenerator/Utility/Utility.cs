@@ -154,118 +154,137 @@ namespace DnDNPCGenerator.Utility
         public static string GenerateName(Race givenRace, Gender givenGender)
         {
             string name = "";
+            int syllableNumber = GenerateNumber(1,5);
             if (givenGender == Gender.MALE)
             {
                 if (givenRace == Race.DRAGONBORN)
                 {
-                    SBuilder.Append(RaceNames.DragonbornFirstNameFirstMaleSyllable[GenerateNumber(0, RaceNames.DragonbornFirstNameFirstMaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.DragonbornFirstNameSecondMaleSyllable[GenerateNumber(0, RaceNames.DragonbornFirstNameSecondMaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.DragonbornFirstNameThirdMaleSyllable[GenerateNumber(0, RaceNames.DragonbornFirstNameThirdMaleSyllable.Count())]);
+                    for(int i = 0; i < syllableNumber; i++)
+                    {
+                        SBuilder.Append(RaceNames.DragonbornFirstNameMaleSyllables[GenerateNumber(0, RaceNames.DragonbornFirstNameMaleSyllables.Count())]);
+                    }
                 }
                 else if (givenRace == Race.DWARF)
                 {
-                    SBuilder.Append(RaceNames.DwarfFirstNameFirstMaleSyllable[GenerateNumber(0, RaceNames.DwarfFirstNameFirstMaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.DwarfFirstNameSecondMaleSyllable[GenerateNumber(0, RaceNames.DwarfFirstNameSecondMaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.DwarfFirstNameThirdMaleSyllable[GenerateNumber(0, RaceNames.DwarfFirstNameThirdMaleSyllable.Count())]);
+                    for (int i = 0; i < syllableNumber; i++)
+                    {
+                        SBuilder.Append(RaceNames.DwarfFirstNameMaleSyllables[GenerateNumber(0, RaceNames.DwarfFirstNameMaleSyllables.Count())]);
+                    }
                 }
                 else if (givenRace == Race.ELF)
                 {
-                    SBuilder.Append(RaceNames.ElfFirstNameFirstMaleSyllable[GenerateNumber(0, RaceNames.ElfFirstNameFirstMaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.ElfFirstNameSecondMaleSyllable[GenerateNumber(0, RaceNames.ElfFirstNameSecondMaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.ElfFirstNameThirdMaleSyllable[GenerateNumber(0, RaceNames.ElfFirstNameThirdMaleSyllable.Count())]);
+                    for (int i = 0; i < syllableNumber; i++)
+                    {
+                        SBuilder.Append(RaceNames.ElfFirstNameMaleSyllables[GenerateNumber(0, RaceNames.ElfFirstNameMaleSyllables.Count())]);
+                    }
                 }
                 else if (givenRace == Race.GNOME)
                 {
-                    SBuilder.Append(RaceNames.GnomeFirstNameFirstMaleSyllable[GenerateNumber(0, RaceNames.GnomeFirstNameFirstMaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.GnomeFirstNameSecondMaleSyllable[GenerateNumber(0, RaceNames.GnomeFirstNameSecondMaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.GnomeFirstNameThirdMaleSyllable[GenerateNumber(0, RaceNames.GnomeFirstNameThirdMaleSyllable.Count())]);
+                    for (int i = 0; i < syllableNumber; i++)
+                    {
+                        SBuilder.Append(RaceNames.GnomeFirstNameMaleSyllables[GenerateNumber(0, RaceNames.GnomeFirstNameMaleSyllables.Count())]);
+                    }
                 }
                 else if (givenRace == Race.HALF_ELF)
                 {
-                    SBuilder.Append(RaceNames.HalflingFirstNameFirstMaleSyllable[GenerateNumber(0, RaceNames.HalflingFirstNameFirstMaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.HalflingFirstNameSecondMaleSyllable[GenerateNumber(0, RaceNames.HalflingFirstNameSecondMaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.HalflingFirstNameThirdMaleSyllable[GenerateNumber(0, RaceNames.HalflingFirstNameThirdMaleSyllable.Count())]);
+                    for (int i = 0; i < syllableNumber; i++)
+                    {
+                        SBuilder.Append(RaceNames.HalfElfFirstNameMaleSyllables[GenerateNumber(0, RaceNames.HalfElfFirstNameMaleSyllables.Count())]);
+                    }
                 }
                 else if (givenRace == Race.HALFLING)
                 {
-                    SBuilder.Append(RaceNames.HalflingFirstNameFirstMaleSyllable[GenerateNumber(0, RaceNames.HalflingFirstNameFirstMaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.HalflingFirstNameSecondMaleSyllable[GenerateNumber(0, RaceNames.HalflingFirstNameSecondMaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.HalflingFirstNameThirdMaleSyllable[GenerateNumber(0, RaceNames.HalflingFirstNameThirdMaleSyllable.Count())]);
+                    for (int i = 0; i < syllableNumber; i++)
+                    {
+                        SBuilder.Append(RaceNames.HalflingFirstNameMaleSyllables[GenerateNumber(0, RaceNames.HalflingFirstNameMaleSyllables.Count())]);
+                    }
                 }
                 else if (givenRace == Race.HALF_ORC)
                 {
-                    SBuilder.Append(RaceNames.HalfOrcFirstNameFirstMaleSyllable[GenerateNumber(0, RaceNames.HalfOrcFirstNameFirstMaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.HalfOrcFirstNameSecondMaleSyllable[GenerateNumber(0, RaceNames.HalfOrcFirstNameSecondMaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.HalfOrcFirstNameThirdMaleSyllable[GenerateNumber(0, RaceNames.HalfOrcFirstNameThirdMaleSyllable.Count())]);
+                    for (int i = 0; i < syllableNumber; i++)
+                    {
+                        SBuilder.Append(RaceNames.HalfOrcFirstNameMaleSyllables[GenerateNumber(0, RaceNames.HalfOrcFirstNameMaleSyllables.Count())]);
+                    }
                 }
                 else if (givenRace == Race.HUMAN)
                 {
-                    SBuilder.Append(RaceNames.HumanFirstNameFirstMaleSyllable[GenerateNumber(0, RaceNames.HumanFirstNameFirstMaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.HumanFirstNameSecondMaleSyllable[GenerateNumber(0, RaceNames.HumanFirstNameSecondMaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.HumanFirstNameThirdMaleSyllable[GenerateNumber(0, RaceNames.HumanFirstNameThirdMaleSyllable.Count())]);
+                    for (int i = 0; i < syllableNumber; i++)
+                    {
+                        SBuilder.Append(RaceNames.HumanFirstNameMaleSyllables[GenerateNumber(0, RaceNames.HumanFirstNameMaleSyllables.Count())]);
+                    }
                 }
                 else
                 {
-                    SBuilder.Append(RaceNames.TieflingFirstNameFirstMaleSyllable[GenerateNumber(0, RaceNames.TieflingFirstNameFirstMaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.TieflingFirstNameSecondMaleSyllable[GenerateNumber(0, RaceNames.TieflingFirstNameSecondMaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.TieflingFirstNameThirdMaleSyllable[GenerateNumber(0, RaceNames.TieflingFirstNameThirdMaleSyllable.Count())]);
+                    for (int i = 0; i < syllableNumber; i++)
+                    {
+                        SBuilder.Append(RaceNames.TieflingFirstNameMaleSyllables[GenerateNumber(0, RaceNames.TieflingFirstNameMaleSyllables.Count())]);
+                    }
                 }
             }
             else
             {
                 if (givenRace == Race.DRAGONBORN)
                 {
-                    SBuilder.Append(RaceNames.DragonbornFirstNameFirstFemaleSyllable[GenerateNumber(0, RaceNames.DragonbornFirstNameFirstFemaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.DragonbornFirstNameSecondFemaleSyllable[GenerateNumber(0, RaceNames.DragonbornFirstNameSecondFemaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.DragonbornFirstNameThirdFemaleSyllable[GenerateNumber(0, RaceNames.DragonbornFirstNameThirdFemaleSyllable.Count())]);
+                    for (int i = 0; i < syllableNumber; i++)
+                    {
+                        SBuilder.Append(RaceNames.DragonbornFirstNameFemaleSyllables[GenerateNumber(0, RaceNames.DragonbornFirstNameFemaleSyllables.Count())]);
+                    }
                 }
                 else if (givenRace == Race.DWARF)
                 {
-                    SBuilder.Append(RaceNames.DwarfFirstNameFirstFemaleSyllable[GenerateNumber(0, RaceNames.DwarfFirstNameFirstFemaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.DwarfFirstNameSecondFemaleSyllable[GenerateNumber(0, RaceNames.DwarfFirstNameSecondFemaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.DwarfFirstNameThirdFemaleSyllable[GenerateNumber(0, RaceNames.DwarfFirstNameThirdFemaleSyllable.Count())]);
+                    for (int i = 0; i < syllableNumber; i++)
+                    {
+                        SBuilder.Append(RaceNames.DwarfFirstNameFemaleSyllables[GenerateNumber(0, RaceNames.DwarfFirstNameFemaleSyllables.Count())]);
+                    }
                 }
                 else if (givenRace == Race.ELF)
                 {
-                    SBuilder.Append(RaceNames.ElfFirstNameFirstFemaleSyllable[GenerateNumber(0, RaceNames.ElfFirstNameFirstFemaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.ElfFirstNameSecondFemaleSyllable[GenerateNumber(0, RaceNames.ElfFirstNameSecondFemaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.ElfFirstNameThirdFemaleSyllable[GenerateNumber(0, RaceNames.ElfFirstNameThirdFemaleSyllable.Count())]);
+                    for (int i = 0; i < syllableNumber; i++)
+                    {
+                        SBuilder.Append(RaceNames.ElfFirstNameFemaleSyllables[GenerateNumber(0, RaceNames.ElfFirstNameFemaleSyllables.Count())]);
+                    }
                 }
                 else if (givenRace == Race.GNOME)
                 {
-                    SBuilder.Append(RaceNames.GnomeFirstNameFirstFemaleSyllable[GenerateNumber(0, RaceNames.GnomeFirstNameFirstFemaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.GnomeFirstNameSecondFemaleSyllable[GenerateNumber(0, RaceNames.GnomeFirstNameSecondFemaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.GnomeFirstNameThirdFemaleSyllable[GenerateNumber(0, RaceNames.GnomeFirstNameThirdFemaleSyllable.Count())]);
+                    for (int i = 0; i < syllableNumber; i++)
+                    {
+                        SBuilder.Append(RaceNames.GnomeFirstNameFemaleSyllables[GenerateNumber(0, RaceNames.GnomeFirstNameFemaleSyllables.Count())]);
+                    }
                 }
                 else if (givenRace == Race.HALF_ELF)
                 {
-                    SBuilder.Append(RaceNames.HalflingFirstNameFirstFemaleSyllable[GenerateNumber(0, RaceNames.HalflingFirstNameFirstFemaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.HalflingFirstNameSecondFemaleSyllable[GenerateNumber(0, RaceNames.HalflingFirstNameSecondFemaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.HalflingFirstNameThirdFemaleSyllable[GenerateNumber(0, RaceNames.HalflingFirstNameThirdFemaleSyllable.Count())]);
+                    for (int i = 0; i < syllableNumber; i++)
+                    {
+                        SBuilder.Append(RaceNames.HalfElfFirstNameFemaleSyllables[GenerateNumber(0, RaceNames.HalfElfFirstNameFemaleSyllables.Count())]);
+                    }
                 }
                 else if (givenRace == Race.HALFLING)
                 {
-                    SBuilder.Append(RaceNames.HalflingFirstNameFirstFemaleSyllable[GenerateNumber(0, RaceNames.HalflingFirstNameFirstFemaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.HalflingFirstNameSecondFemaleSyllable[GenerateNumber(0, RaceNames.HalflingFirstNameSecondFemaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.HalflingFirstNameThirdFemaleSyllable[GenerateNumber(0, RaceNames.HalflingFirstNameThirdFemaleSyllable.Count())]);
+                    for (int i = 0; i < syllableNumber; i++)
+                    {
+                        SBuilder.Append(RaceNames.HalflingFirstNameFemaleSyllables[GenerateNumber(0, RaceNames.HalflingFirstNameFemaleSyllables.Count())]);
+                    }
                 }
                 else if (givenRace == Race.HALF_ORC)
                 {
-                    SBuilder.Append(RaceNames.HalfOrcFirstNameFirstFemaleSyllable[GenerateNumber(0, RaceNames.HalfOrcFirstNameFirstFemaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.HalfOrcFirstNameSecondFemaleSyllable[GenerateNumber(0, RaceNames.HalfOrcFirstNameSecondFemaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.HalfOrcFirstNameThirdFemaleSyllable[GenerateNumber(0, RaceNames.HalfOrcFirstNameThirdFemaleSyllable.Count())]);
+                    for (int i = 0; i < syllableNumber; i++)
+                    {
+                        SBuilder.Append(RaceNames.HalfOrcFirstNameFemaleSyllables[GenerateNumber(0, RaceNames.HalfOrcFirstNameFemaleSyllables.Count())]);
+                    }
                 }
                 else if (givenRace == Race.HUMAN)
                 {
-                    SBuilder.Append(RaceNames.HumanFirstNameFirstFemaleSyllable[GenerateNumber(0, RaceNames.HumanFirstNameFirstFemaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.HumanFirstNameSecondFemaleSyllable[GenerateNumber(0, RaceNames.HumanFirstNameSecondFemaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.HumanFirstNameThirdFemaleSyllable[GenerateNumber(0, RaceNames.HumanFirstNameThirdFemaleSyllable.Count())]);
+                    for (int i = 0; i < syllableNumber; i++)
+                    {
+                        SBuilder.Append(RaceNames.HumanFirstNameFemaleSyllables[GenerateNumber(0, RaceNames.HumanFirstNameFemaleSyllables.Count())]);
+                    }
                 }
                 else
                 {
-                    SBuilder.Append(RaceNames.TieflingFirstNameFirstFemaleSyllable[GenerateNumber(0, RaceNames.TieflingFirstNameFirstFemaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.TieflingFirstNameSecondFemaleSyllable[GenerateNumber(0, RaceNames.TieflingFirstNameSecondFemaleSyllable.Count())]);
-                    SBuilder.Append(RaceNames.TieflingFirstNameThirdFemaleSyllable[GenerateNumber(0, RaceNames.TieflingFirstNameThirdFemaleSyllable.Count())]);
+                    for (int i = 0; i < syllableNumber; i++)
+                    {
+                        SBuilder.Append(RaceNames.TieflingFirstNameFemaleSyllables[GenerateNumber(0, RaceNames.TieflingFirstNameFemaleSyllables.Count())]);
+                    }
                 }
             }
 
