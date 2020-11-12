@@ -40,6 +40,10 @@ namespace DnDNPCGenerator.Pages
             DisplayCharacterStats();
             Characters = characters;
             LoadCharacterListBox();
+            if (characters.Count > 0)
+            {
+                EditButton.Visibility = Visibility.Visible;
+            }
         }
 
         private void GenerateButton_Click(object sender, RoutedEventArgs e)
@@ -48,7 +52,10 @@ namespace DnDNPCGenerator.Pages
             DisplayCharacterStats();
             Characters.Add(SelectedCharacter);
             AddCharacterItemBoxToCharacterListBox(SelectedCharacter);
-            EditButton.Visibility = Visibility.Visible;
+            if(EditButton.Visibility != Visibility.Visible)
+            {
+                EditButton.Visibility = Visibility.Visible;
+            }
         }
 
         private void LoadCharacterListBox()
@@ -91,6 +98,7 @@ namespace DnDNPCGenerator.Pages
         {
 
         }
+
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
             EditCharacter editCharPage = new EditCharacter(Characters, SelectedCharacter);
