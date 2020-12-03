@@ -3,6 +3,7 @@ using DnDNPCGenerator.Models;
 using DnDNPCGenerator.UserControls;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace DnDNPCGenerator.Pages
     /// </summary>
     public partial class ViewCharacters : Page
     {
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public List<Character> Characters { get; private set; }
         public Character SelectedCharacter { get; private set; }
 
@@ -30,7 +32,12 @@ namespace DnDNPCGenerator.Pages
         {
             InitializeComponent();
             this.DataContext = SelectedCharacter;
-            Characters = new List<Character>();
+            Characters = Utility.Seralizer.DeserializeCharacters();
+            LoadCharacterListBox();
+            if (Characters.Count > 0)
+            {
+                EditButton.Visibility = Visibility.Visible;
+            }
         }
 
         public ViewCharacters(List<Character> characters, Character selected)
@@ -56,6 +63,7 @@ namespace DnDNPCGenerator.Pages
             {
                 EditButton.Visibility = Visibility.Visible;
             }
+            Utility.Seralizer.SerializeCharacters(Characters);
         }
 
         private void LoadCharacterListBox()
@@ -82,10 +90,10 @@ namespace DnDNPCGenerator.Pages
         private void DisplayCharacterStats()
         {
             CharName.Content = SelectedCharacter.Name;
-            CharRace.Content = Utility.Utility.EnumToString(SelectedCharacter.Race);
-            CharGender.Content = Utility.Utility.EnumToString(SelectedCharacter.Gender);
-            CharAlignment.Content = Utility.Utility.EnumToString(SelectedCharacter.Alignment);
-            CharClass.Content = Utility.Utility.EnumToString(SelectedCharacter.DnDClass);
+            CharRace.Content = Utility.Generator.EnumToString(SelectedCharacter.Race);
+            CharGender.Content = Utility.Generator.EnumToString(SelectedCharacter.Gender);
+            CharAlignment.Content = Utility.Generator.EnumToString(SelectedCharacter.Alignment);
+            CharClass.Content = Utility.Generator.EnumToString(SelectedCharacter.DnDClass);
             CharStr.Content = SelectedCharacter.Strength;
             CharDex.Content = SelectedCharacter.Dexterity;
             CharCon.Content = SelectedCharacter.Constitution;

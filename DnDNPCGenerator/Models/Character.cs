@@ -1,8 +1,10 @@
 ﻿using DnDNPCGenerator.Enums;
 using DnDNPCGenerator.Utility;
+using System;
 
 namespace DnDNPCGenerator.Models
 {
+    [Serializable()]
     public class Character
     {
         public string Name { get; set; }
@@ -16,20 +18,20 @@ namespace DnDNPCGenerator.Models
         public Gender Gender { get; set;  }
         public DNDClass DnDClass { get; set; }
         public Alignment Alignment { get; set; }
-        public byte[] ImageBytes { get; set; }
+        //public byte[] ImageBytes { get; set; }
         public Character()
         {
-            Strength = Utility.Utility.GenerateStatistic();
-            Dexterity = Utility.Utility.GenerateStatistic();
-            Constitution = Utility.Utility.GenerateStatistic();
-            Intelligence = Utility.Utility.GenerateStatistic();
-            Wisdom = Utility.Utility.GenerateStatistic();
-            Charisma = Utility.Utility.GenerateStatistic();
-            Race = Utility.Utility.GenerateRace();
-            Gender = Utility.Utility.GenerateGender();
-            Name = Utility.Utility.GenerateName(Race, Gender);
-            DnDClass = Utility.Utility.GenerateClass(Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma);
-            Alignment = Utility.Utility.GenerateAlignment();
+            Strength = Utility.Generator.GenerateStatistic();
+            Dexterity = Utility.Generator.GenerateStatistic();
+            Constitution = Utility.Generator.GenerateStatistic();
+            Intelligence = Utility.Generator.GenerateStatistic();
+            Wisdom = Utility.Generator.GenerateStatistic();
+            Charisma = Utility.Generator.GenerateStatistic();
+            Race = Utility.Generator.GenerateRace();
+            Gender = Utility.Generator.GenerateGender();
+            Name = Utility.Generator.GenerateName(Race, Gender);
+            DnDClass = Utility.Generator.GenerateClass(Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma);
+            Alignment = Utility.Generator.GenerateAlignment();
             //string alignmenthalf = Alignment.ToString().Split('_')[1];
             //ImageBytes = Utility.Utility.GetCharacterImage(Gender, Race, DnDClass, alignmenthalf);
         }

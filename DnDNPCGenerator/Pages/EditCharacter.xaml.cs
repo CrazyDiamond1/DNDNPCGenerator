@@ -62,6 +62,7 @@ namespace DnDNPCGenerator.Pages
             }
         }
         public Alignment SelectedAlignment { get; set; }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public List<Character> Characters { get; private set; }
         public Character SelectedCharacter { get; private set; }
 
@@ -150,6 +151,9 @@ namespace DnDNPCGenerator.Pages
             SelectedCharacter.Constitution = tempInt < 0 ? 0 : tempInt;
             Int32.TryParse(CharChr.Text, out tempInt);
             SelectedCharacter.Charisma = tempInt < 0 ? 0 : tempInt;
+
+            Utility.Seralizer.SerializeCharacters(Characters);
+
             ViewCharacters viewCharPage = new ViewCharacters(Characters, SelectedCharacter);
             NavigationService.Navigate(viewCharPage);
         }

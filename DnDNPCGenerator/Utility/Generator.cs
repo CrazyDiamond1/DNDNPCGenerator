@@ -12,7 +12,7 @@ using System.Globalization;
 
 namespace DnDNPCGenerator.Utility
 {
-    public static class Utility
+    public static class Generator
     {
         public static Random NumberGenerator { get; } = new Random();
         public static StringBuilder SBuilder { get; } = new StringBuilder();
