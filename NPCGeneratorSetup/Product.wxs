@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="NPCGenerator" Language="1033" Version="1.0.0.0" Manufacturer="Noah Tanner" UpgradeCode="c1928a94-8aa2-4fdf-9c92-b1a31467859d">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="APPLICATIONROOTDIRECTORY" Name="NPCGenerator"/>
+      </Directory>
+      <Directory Id ="ProgramMenuFolder">
+        <Directory Id="DesktopFolder" Name="NPCGenerator"/>
+      </Directory>
+    </Directory>
+
+    <ComponentGroup Id="ProductComponents" Directory="APPLICATIONROOTDIRECTORY">
+      <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+      <Component Id="DnDNPCGenerator.exe" Guid="{FD6E0C96-A5B3-4177-9395-002E3834EE04}">
+        <File Id="DnDNPCGenerator.exe" Source="$(var.DnDNPCGenerator.TargetPath)" KeyPath="yes" Checksum="yes" />
+      </Component>
+      <Component Id="Newtonsoft.Json.dll" Guid="{C710C8C7-3907-416A-A5F7-EE7DFBB2962E}">
+        <File Id="Newtonsoft.Json.dll" Source="$(var.SolutionDir)bin\Debug\Newtonsoft.Json.dll" KeyPath="yes"/>
+      </Component>
+    </ComponentGroup>
+
+    <DirectoryRef Id="DesktopFolder">
+      <Component Id="ApplicationShortcut" Guid="{116F1048-B85F-4F09-AA8D-535DEBD34D37}">
+        <Shortcut Id="ApplicationShortcutDesktop"
+                  Name="DnD NPC Generator"
+                  Description="Yo get that installer workin?"
+                  Target="[#DnDNPCGenerator.exe]"
+                  WorkingDirectory="APPLICATIONROOTDIRECTORY"/>
+        <RemoveFolder Id="DesktopFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\NoahTanner\DnDNPCGenerator" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+
+    <Feature Id="MainApplication" Title="NPCGenerator" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="ApplicationShortcut"/>
+    </Feature>
+    
+	</Product>
+</Wix>
