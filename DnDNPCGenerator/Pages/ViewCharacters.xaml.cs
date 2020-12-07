@@ -1,8 +1,10 @@
 ﻿using DnDNPCGenerator.Enums;
 using DnDNPCGenerator.Models;
 using DnDNPCGenerator.UserControls;
+using DnDNPCGenerator.Utility;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -25,22 +27,24 @@ namespace DnDNPCGenerator.Pages
     public partial class ViewCharacters : Page
     {
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public List<Character> Characters { get; private set; }
+        public ObservableCollection<Character> Characters { get; private set; }
         public Character SelectedCharacter { get; private set; }
 
         public ViewCharacters()
         {
             InitializeComponent();
             this.DataContext = SelectedCharacter;
-            Characters = Utility.Seralizer.DeserializeCharacters();
+            Characters = Seralizer.DeserializeCharacters();
             LoadCharacterListBox();
             if (Characters.Count > 0)
             {
                 EditButton.Visibility = Visibility.Visible;
+                SelectedCharacter = Characters[0];
+                DisplayCharacterStats();
             }
         }
 
-        public ViewCharacters(List<Character> characters, Character selected)
+        public ViewCharacters(ObservableCollection<Character> characters, Character selected)
         {
             InitializeComponent();
             SelectedCharacter = selected;
@@ -55,7 +59,7 @@ namespace DnDNPCGenerator.Pages
 
         private void GenerateButton_Click(object sender, RoutedEventArgs e)
         {
-            SelectedCharacter = new Character();
+            SelectedCharacter = new Character(false);
             DisplayCharacterStats();
             Characters.Add(SelectedCharacter);
             AddCharacterItemBoxToCharacterListBox(SelectedCharacter);
@@ -63,7 +67,7 @@ namespace DnDNPCGenerator.Pages
             {
                 EditButton.Visibility = Visibility.Visible;
             }
-            Utility.Seralizer.SerializeCharacters(Characters);
+            Seralizer.SerializeCharacters(Characters);
         }
 
         private void LoadCharacterListBox()
@@ -90,21 +94,23 @@ namespace DnDNPCGenerator.Pages
         private void DisplayCharacterStats()
         {
             CharName.Content = SelectedCharacter.Name;
-            CharRace.Content = Utility.Generator.EnumToString(SelectedCharacter.Race);
-            CharGender.Content = Utility.Generator.EnumToString(SelectedCharacter.Gender);
-            CharAlignment.Content = Utility.Generator.EnumToString(SelectedCharacter.Alignment);
-            CharClass.Content = Utility.Generator.EnumToString(SelectedCharacter.DnDClass);
+            CharRace.Content = Generator.EnumToString(SelectedCharacter.Race);
+            CharGender.Content = Generator.EnumToString(SelectedCharacter.Gender);
+            CharAlignment.Content = Generator.EnumToString(SelectedCharacter.Alignment);
+            CharClass.Content = Generator.EnumToString(SelectedCharacter.DnDClass);
             CharStr.Content = SelectedCharacter.Strength;
-            CharDex.Content = SelectedCharacter.Dexterity;
+            CharStrMod.Content = Generator.GetStatModifier(SelectedCharacter.Strength);
+            CharDex.Content = SelectedCharacter.Dexterity;  
+            CharDexMod.Content = Generator.GetStatModifier(SelectedCharacter.Dexterity);
             CharCon.Content = SelectedCharacter.Constitution;
+            CharConMod.Content = Generator.GetStatModifier(SelectedCharacter.Constitution);
             CharInt.Content = SelectedCharacter.Intelligence;
+            CharIntMod.Content = Generator.GetStatModifier(SelectedCharacter.Intelligence);
             CharWis.Content = SelectedCharacter.Wisdom;
+            CharWisMod.Content = Generator.GetStatModifier(SelectedCharacter.Wisdom);
             CharChr.Content = SelectedCharacter.Charisma;
-        }
-
-        private void GenerateOptions_Click(object sender, RoutedEventArgs e)
-        {
-
+            CharChrMod.Content = Generator.GetStatModifier(SelectedCharacter.Charisma);
+            NotesContent.Content = SelectedCharacter.Notes;
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
@@ -112,5 +118,12 @@ namespace DnDNPCGenerator.Pages
             EditCharacter editCharPage = new EditCharacter(Characters, SelectedCharacter);
             NavigationService.Navigate(editCharPage);
         }
+
+        private void NewCharacter_Click(object sender, RoutedEventArgs e)
+        {
+            EditCharacter editCharPage = new EditCharacter(Characters, new Character(true));
+            NavigationService.Navigate(editCharPage);
+        }
+
     }
 }

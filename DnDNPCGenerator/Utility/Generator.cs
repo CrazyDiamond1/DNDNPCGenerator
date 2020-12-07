@@ -302,5 +302,10 @@ namespace DnDNPCGenerator.Utility
             valueString = myTI.ToTitleCase(valueString);
             return valueString;
         }
+        public static string GetStatModifier(int stat)
+        {
+            int val = Convert.ToInt32(Math.Floor((stat - 10) / 2.0));
+            return val > 0 ? "+" + val.ToString() : val.ToString();
+        }
     }
 }

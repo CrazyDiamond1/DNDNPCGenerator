@@ -37,5 +37,14 @@ namespace DnDNPCGenerator.UserControls
             AlignmentLabel.Content = Utility.Generator.EnumToString(SetCharacter.Alignment);
             this.DataContext = SetCharacter;
         }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }

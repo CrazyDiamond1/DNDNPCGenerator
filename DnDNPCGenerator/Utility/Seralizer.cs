@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -17,7 +18,7 @@ namespace DnDNPCGenerator.Utility
         static string FileName { get; set; }
         static string FilePath { get; set; }
 
-        public static void SerializeCharacters(List<Character> characters)
+        public static void SerializeCharacters(ObservableCollection<Character> characters)
         {
             FileName = "/Characters.json";
             FilePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/DNDNPCGenerator";
@@ -35,7 +36,7 @@ namespace DnDNPCGenerator.Utility
             }
         }
 
-        public static List<Character> DeserializeCharacters()
+        public static ObservableCollection<Character> DeserializeCharacters()
         {
             FileName = "/Characters.json";
             FilePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/DNDNPCGenerator";
@@ -47,12 +48,12 @@ namespace DnDNPCGenerator.Utility
             if (File.Exists(FilePath+FileName))
             {
                 string jsonString = File.ReadAllText(FilePath+FileName);
-                List<Character> characters = JsonConvert.DeserializeObject<List<Character>>(jsonString);
+                ObservableCollection<Character> characters = JsonConvert.DeserializeObject<ObservableCollection<Character>>(jsonString);
                 return characters;
             }
             else
             {
-                return new List<Character>();
+                return new ObservableCollection<Character>();
             }
         }
     }

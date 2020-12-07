@@ -18,22 +18,42 @@ namespace DnDNPCGenerator.Models
         public Gender Gender { get; set;  }
         public DNDClass DnDClass { get; set; }
         public Alignment Alignment { get; set; }
+        public string Notes { get; set; }
         //public byte[] ImageBytes { get; set; }
-        public Character()
+        public Character(bool isBlank)
         {
-            Strength = Utility.Generator.GenerateStatistic();
-            Dexterity = Utility.Generator.GenerateStatistic();
-            Constitution = Utility.Generator.GenerateStatistic();
-            Intelligence = Utility.Generator.GenerateStatistic();
-            Wisdom = Utility.Generator.GenerateStatistic();
-            Charisma = Utility.Generator.GenerateStatistic();
-            Race = Utility.Generator.GenerateRace();
-            Gender = Utility.Generator.GenerateGender();
-            Name = Utility.Generator.GenerateName(Race, Gender);
-            DnDClass = Utility.Generator.GenerateClass(Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma);
-            Alignment = Utility.Generator.GenerateAlignment();
-            //string alignmenthalf = Alignment.ToString().Split('_')[1];
-            //ImageBytes = Utility.Utility.GetCharacterImage(Gender, Race, DnDClass, alignmenthalf);
+            if (!isBlank)
+            {
+                Strength = Generator.GenerateStatistic();
+                Dexterity = Generator.GenerateStatistic();
+                Constitution = Generator.GenerateStatistic();
+                Intelligence = Generator.GenerateStatistic();
+                Wisdom = Generator.GenerateStatistic();
+                Charisma = Generator.GenerateStatistic();
+                Race = Generator.GenerateRace();
+                Gender = Generator.GenerateGender();
+                Name = Generator.GenerateName(Race, Gender);
+                DnDClass = Generator.GenerateClass(Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma);
+                Alignment = Generator.GenerateAlignment();
+                Notes = "";
+                //string alignmenthalf = Alignment.ToString().Split('_')[1];
+                //ImageBytes = Utility.Utility.GetCharacterImage(Gender, Race, DnDClass, alignmenthalf);
+            }
+            else
+            {
+                Strength = 0;
+                Dexterity = 0;
+                Constitution = 0;
+                Intelligence = 0;
+                Wisdom = 0;
+                Charisma = 0;
+                Race = 0;
+                Gender = 0;
+                Name = "";
+                DnDClass = 0;
+                Alignment = 0;
+                Notes = "";
+            }
         }
     }
 }

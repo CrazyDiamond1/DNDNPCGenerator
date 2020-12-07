@@ -3,6 +3,7 @@ using DnDNPCGenerator.Models;
 using DnDNPCGenerator.UserControls;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -63,17 +64,17 @@ namespace DnDNPCGenerator.Pages
         }
         public Alignment SelectedAlignment { get; set; }
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        public List<Character> Characters { get; private set; }
+        public ObservableCollection<Character> Characters { get; private set; }
         public Character SelectedCharacter { get; private set; }
 
         public EditCharacter()
         {
             InitializeComponent();
             this.DataContext = SelectedCharacter;
-            Characters = new List<Character>();
+            Characters = new ObservableCollection<Character>();
         }
 
-        public EditCharacter(List<Character> characters, Character selected)
+        public EditCharacter(ObservableCollection<Character> characters, Character selected)
         {
             InitializeComponent();
             SelectedCharacter = selected;
@@ -110,6 +111,7 @@ namespace DnDNPCGenerator.Pages
             CharInt.Text = SelectedCharacter.Intelligence.ToString();
             CharWis.Text = SelectedCharacter.Wisdom.ToString();
             CharChr.Text = SelectedCharacter.Charisma.ToString();
+            NotesContent.Text = SelectedCharacter.Notes;
         }
         private void LoadCharacterListBox()
         {
@@ -151,7 +153,7 @@ namespace DnDNPCGenerator.Pages
             SelectedCharacter.Constitution = tempInt < 0 ? 0 : tempInt;
             Int32.TryParse(CharChr.Text, out tempInt);
             SelectedCharacter.Charisma = tempInt < 0 ? 0 : tempInt;
-
+            SelectedCharacter.Notes = NotesContent.Text;
             Utility.Seralizer.SerializeCharacters(Characters);
 
             ViewCharacters viewCharPage = new ViewCharacters(Characters, SelectedCharacter);

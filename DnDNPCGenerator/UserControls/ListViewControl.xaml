@@ -7,13 +7,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="300">
     <Grid>
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="85*"/>
+            <ColumnDefinition Width="15*"/>
+        </Grid.ColumnDefinitions>-->
         <Grid x:Name="CharacterGrid"
                           Height="50"
-                          HorizontalAlignment="Stretch">
+                          HorizontalAlignment="Stretch"
+              Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20*"/>
                 <ColumnDefinition Width="30*"/>
-                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="25*"/>
                 <ColumnDefinition Width="30*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -57,5 +62,22 @@
                    Grid.Column="3"
                    Grid.Row="1"/>
         </Grid>
+        <!--<Grid x:Name="ButtonGrid"
+              Height="50"
+              HorizontalAlignment="Stretch"
+              Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="EditButton"
+                    Grid.Row="0"
+                    Content="Edit"
+                    Click="EditButton_Click"/>
+            <Button x:Name="DeleteButton"
+                    Grid.Row="1"
+                    Content="Delete"
+                    Click="DeleteButton_Click"/>
+        </Grid>-->
     </Grid>
 </UserControl>
