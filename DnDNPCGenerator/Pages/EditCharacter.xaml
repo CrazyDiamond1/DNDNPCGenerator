@@ -36,7 +36,7 @@
                  HorizontalContentAlignment="Stretch"
                  SelectionChanged="CharacterBox_SelectionChanged"
                  Margin="10"/>
-        
+
         <Grid x:Name="CharacterInfoGrid"  
                    Grid.Column="1"
                    Grid.Row="1"

@@ -136,7 +136,7 @@ namespace DnDNPCGenerator.Pages
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             SelectedCharacter.Name = CharName.Text;
-            int tempInt = 0;
+            int tempInt = 10;
             SelectedCharacter.Alignment = SelectedAlignment;
             SelectedCharacter.DnDClass = SelectedDnDClass;
             SelectedCharacter.Gender = SelectedGender;
@@ -154,8 +154,11 @@ namespace DnDNPCGenerator.Pages
             Int32.TryParse(CharChr.Text, out tempInt);
             SelectedCharacter.Charisma = tempInt < 0 ? 0 : tempInt;
             SelectedCharacter.Notes = NotesContent.Text;
-            Utility.Seralizer.SerializeCharacters(Characters);
+            
+            Characters.Add(SelectedCharacter);
+            AddCharacterItemBoxToCharacterListBox(SelectedCharacter);
 
+            Utility.Seralizer.SerializeCharacters(Characters);
             ViewCharacters viewCharPage = new ViewCharacters(Characters, SelectedCharacter);
             NavigationService.Navigate(viewCharPage);
         }
