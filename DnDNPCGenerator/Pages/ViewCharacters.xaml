@@ -188,7 +188,7 @@
                        Grid.Row="0"/>
                     <Label x:Name="CharStrMod"
                        Height="30"
-                       Width="30"
+                       Width="60"
                        FontSize="15px"
                        VerticalAlignment="Center"
                        HorizontalContentAlignment="Center"
@@ -212,7 +212,7 @@
                        Grid.Row="0"/>
                     <Label x:Name="CharDexMod"
                        Height="30"
-                       Width="30"
+                       Width="60"
                        FontSize="15px"
                        VerticalAlignment="Center"
                        HorizontalContentAlignment="Center"
@@ -236,7 +236,7 @@
                        Grid.Row="1"/>
                     <Label x:Name="CharConMod"
                        Height="30"
-                       Width="30"
+                       Width="60"
                        FontSize="15px"
                        VerticalAlignment="Center"
                        HorizontalContentAlignment="Center"
@@ -260,7 +260,7 @@
                        Grid.Row="1"/>
                     <Label x:Name="CharIntMod"
                        Height="30"
-                       Width="30"
+                       Width="60"
                        FontSize="15px"
                        VerticalAlignment="Center"
                        HorizontalContentAlignment="Center"
@@ -284,7 +284,7 @@
                        Grid.Row="2"/>
                     <Label x:Name="CharWisMod"
                        Height="30"
-                       Width="30"
+                       Width="60"
                        FontSize="15px"
                        VerticalAlignment="Center"
                        HorizontalContentAlignment="Center"
@@ -308,7 +308,7 @@
                        Grid.Row="2"/>
                     <Label x:Name="CharChrMod"
                        Height="30"
-                       Width="30"
+                       Width="60"
                        FontSize="15px"
                        VerticalAlignment="Center"
                        HorizontalContentAlignment="Center"
