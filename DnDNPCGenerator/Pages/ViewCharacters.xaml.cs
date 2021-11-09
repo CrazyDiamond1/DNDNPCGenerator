@@ -63,7 +63,7 @@ namespace DnDNPCGenerator.Pages
             DisplayCharacterStats();
             Characters.Add(SelectedCharacter);
             AddCharacterItemBoxToCharacterListBox(SelectedCharacter);
-            if(EditButton.Visibility != Visibility.Visible)
+            if (EditButton.Visibility != Visibility.Visible)
             {
                 EditButton.Visibility = Visibility.Visible;
             }
@@ -72,7 +72,7 @@ namespace DnDNPCGenerator.Pages
 
         private void LoadCharacterListBox()
         {
-            foreach(Character c in Characters)
+            foreach (Character c in Characters)
             {
                 AddCharacterItemBoxToCharacterListBox(c);
             }
@@ -100,7 +100,7 @@ namespace DnDNPCGenerator.Pages
             CharClass.Content = Generator.EnumToString(SelectedCharacter.DnDClass);
             CharStr.Content = SelectedCharacter.Strength;
             CharStrMod.Content = Generator.GetStatModifier(SelectedCharacter.Strength);
-            CharDex.Content = SelectedCharacter.Dexterity;  
+            CharDex.Content = SelectedCharacter.Dexterity;
             CharDexMod.Content = Generator.GetStatModifier(SelectedCharacter.Dexterity);
             CharCon.Content = SelectedCharacter.Constitution;
             CharConMod.Content = Generator.GetStatModifier(SelectedCharacter.Constitution);
@@ -111,6 +111,7 @@ namespace DnDNPCGenerator.Pages
             CharChr.Content = SelectedCharacter.Charisma;
             CharChrMod.Content = Generator.GetStatModifier(SelectedCharacter.Charisma);
             NotesContent.Content = SelectedCharacter.Notes;
+            UpdateCharacterPortrait();
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
@@ -123,6 +124,20 @@ namespace DnDNPCGenerator.Pages
         {
             EditCharacter editCharPage = new EditCharacter(Characters, new Character(true));
             NavigationService.Navigate(editCharPage);
+        }
+
+        private void UpdateCharacterPortrait()
+        {
+            string headString = @"/DnDNPCGenerator;component/Images/CharacterPortraits/" + SelectedCharacter.Race.ToString() + "_" + SelectedCharacter.Gender.ToString() + "_HEAD.png";
+            string handsString = @"/DnDNPCGenerator;component/Images/CharacterPortraits/" + SelectedCharacter.Race.ToString() + "_HANDS.png";
+            string torsoString = @"/DnDNPCGenerator;component/Images/CharacterPortraits/" + SelectedCharacter.DnDClass.ToString() + "_" + SelectedCharacter.Gender.ToString() + "_TORSO.png";
+            string feetString = @"/DnDNPCGenerator;component/Images/CharacterPortraits/" + "CHARACTER" + "_BOOTS.png";
+            string tailString = @"/DnDNPCGenerator;component/Images/CharacterPortraits/" + SelectedCharacter.Race.ToString() + "_TAIL.png";
+            HeadImage.Source = new BitmapImage(new Uri(headString, UriKind.Relative));
+            HandsImage.Source = new BitmapImage(new Uri(handsString, UriKind.Relative));
+            TorsoImage.Source = new BitmapImage(new Uri(torsoString, UriKind.Relative));
+            FeetImage.Source = new BitmapImage(new Uri(feetString, UriKind.Relative));
+            TailImage.Source = new BitmapImage(new Uri(tailString, UriKind.Relative));
         }
 
     }

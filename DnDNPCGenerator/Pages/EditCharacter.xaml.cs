@@ -66,6 +66,7 @@ namespace DnDNPCGenerator.Pages
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public ObservableCollection<Character> Characters { get; private set; }
         public Character SelectedCharacter { get; private set; }
+        private bool NewCharacter { get; set; }
 
         public EditCharacter()
         {
@@ -129,12 +130,28 @@ namespace DnDNPCGenerator.Pages
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[^0-9]+");
+            Regex regex = new Regex(@"[^-0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void UpdateCharacterPortrait()
+        {
+            string headString = @"/DnDNPCGenerator;component/Images/CharacterPortraits/" + SelectedRace + "_" + SelectedGender + "_HEAD.png";
+            string handsString = @"/DnDNPCGenerator;component/Images/CharacterPortraits/" + SelectedRace + "_HANDS.png";
+            string torsoString = @"/DnDNPCGenerator;component/Images/CharacterPortraits/" + SelectedDnDClass + "_" + SelectedGender + "_TORSO.png";
+            string feetString = @"/DnDNPCGenerator;component/Images/CharacterPortraits/" + "CHARACTER" + "_BOOTS.png";
+            string tailString = @"/DnDNPCGenerator;component/Images/CharacterPortraits/" + SelectedRace + "_TAIL.png";
+            HeadImage.Source = new BitmapImage(new Uri(headString, UriKind.Relative));
+            HandsImage.Source = new BitmapImage(new Uri(handsString, UriKind.Relative));
+            TorsoImage.Source = new BitmapImage(new Uri(torsoString, UriKind.Relative));
+            FeetImage.Source = new BitmapImage(new Uri(feetString, UriKind.Relative));
+            TailImage.Source = new BitmapImage(new Uri(tailString, UriKind.Relative));
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            bool saveNew = !Characters.Contains(SelectedCharacter);
+
             SelectedCharacter.Name = CharName.Text;
             int tempInt = 10;
             SelectedCharacter.Alignment = SelectedAlignment;
@@ -142,21 +159,24 @@ namespace DnDNPCGenerator.Pages
             SelectedCharacter.Gender = SelectedGender;
             SelectedCharacter.Race = SelectedRace;
             Int32.TryParse(CharStr.Text, out tempInt);
-            SelectedCharacter.Strength = tempInt < 0 ? 0 : tempInt;
+            SelectedCharacter.Strength = tempInt;
             Int32.TryParse(CharInt.Text, out tempInt);
-            SelectedCharacter.Intelligence = tempInt < 0 ? 0 : tempInt;
+            SelectedCharacter.Intelligence = tempInt;
             Int32.TryParse(CharDex.Text, out tempInt);
-            SelectedCharacter.Dexterity = tempInt < 0 ? 0 : tempInt;
+            SelectedCharacter.Dexterity = tempInt;
             Int32.TryParse(CharWis.Text, out tempInt);
-            SelectedCharacter.Wisdom = tempInt < 0 ? 0 : tempInt;
+            SelectedCharacter.Wisdom = tempInt;
             Int32.TryParse(CharCon.Text, out tempInt);
-            SelectedCharacter.Constitution = tempInt < 0 ? 0 : tempInt;
+            SelectedCharacter.Constitution = tempInt;
             Int32.TryParse(CharChr.Text, out tempInt);
-            SelectedCharacter.Charisma = tempInt < 0 ? 0 : tempInt;
+            SelectedCharacter.Charisma = tempInt;
             SelectedCharacter.Notes = NotesContent.Text;
-            
-            Characters.Add(SelectedCharacter);
-            AddCharacterItemBoxToCharacterListBox(SelectedCharacter);
+
+            if (saveNew)
+            {
+                Characters.Add(SelectedCharacter);
+                AddCharacterItemBoxToCharacterListBox(SelectedCharacter);
+            }
 
             Utility.Seralizer.SerializeCharacters(Characters);
             ViewCharacters viewCharPage = new ViewCharacters(Characters, SelectedCharacter);
@@ -166,16 +186,19 @@ namespace DnDNPCGenerator.Pages
         private void CharGender_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SelectedGender = (Gender)CharGender.SelectedValue;
+            UpdateCharacterPortrait();
         }
 
         private void CharRace_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SelectedRace = (Race)CharRace.SelectedValue;
+            UpdateCharacterPortrait();
         }
 
         private void CharClass_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SelectedDnDClass = (DNDClass)CharClass.SelectedValue;
+            UpdateCharacterPortrait();
         }
 
         private void CharAlignment_SelectionChanged(object sender, SelectionChangedEventArgs e)
